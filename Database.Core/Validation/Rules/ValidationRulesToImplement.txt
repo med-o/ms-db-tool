@@ -1,0 +1,11 @@
+﻿
+TODOs.. AKA rules to implement
+
+1) Errors
+- first batch has to have USE statement
+- index hint usage
+
+2) Warnings
+- LIKE predicate with leading wildcard (Column LIKE '%text')
+
+3) Recommendations

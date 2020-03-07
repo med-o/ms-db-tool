@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C0B2976-BA5C-42A5-A82B-C04B002BA4F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Database.Core</RootNamespace>
+    <AssemblyName>Database.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransactSql.ScriptDom, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.TransactSql.ScriptDom.14.0.3811.1\lib\net40\Microsoft.SqlServer.TransactSql.ScriptDom.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\DatabaseContext.cs" />
+    <Compile Include="Context\DatabaseContextProvider.cs" />
+    <Compile Include="Context\DatabaseContextType.cs" />
+    <Compile Include="Context\IDatabaseContextProvider.cs" />
+    <Compile Include="FragmentExtensions\BooleanExpressionExtensions.cs" />
+    <Compile Include="FragmentExtensions\ColumnDefinitionExtensions.cs" />
+    <Compile Include="FragmentExtensions\ColumnReferenceExpressionExtensions.cs" />
+    <Compile Include="FragmentExtensions\CommonTableExpressionExtensions.cs" />
+    <Compile Include="FragmentExtensions\DataTypeReferenceExtensions.cs" />
+    <Compile Include="FragmentExtensions\ExecutableEntityExtensions.cs" />
+    <Compile Include="FragmentExtensions\ForClauseExtensions.cs" />
+    <Compile Include="FragmentExtensions\FunctionCallExtensions.cs" />
+    <Compile Include="FragmentExtensions\FunctionReturnTypeExtensions.cs" />
+    <Compile Include="FragmentExtensions\InsertSourceExtensions.cs" />
+    <Compile Include="FragmentExtensions\MergeActionExtensions.cs" />
+    <Compile Include="FragmentExtensions\MergeSpecificationExtensions.cs" />
+    <Compile Include="FragmentExtensions\MergeStatementExtensions.cs" />
+    <Compile Include="FragmentExtensions\LiteralExtensions.cs" />
+    <Compile Include="FragmentExtensions\OutputIntoClauseExtensions.cs" />
+    <Compile Include="FragmentExtensions\ParameterlessCallExtensions.cs" />
+    <Compile Include="FragmentExtensions\ProcedureParameterExtensions.cs" />
+    <Compile Include="FragmentExtensions\QueryExpressionExtensions.cs" />
+    <Compile Include="FragmentExtensions\QuerySpecificationExtensions.cs" />
+    <Compile Include="FragmentExtensions\ScalarExpressionExtensions.cs" />
+    <Compile Include="FragmentExtensions\SchemaObjectNameExtensions.cs" />
+    <Compile Include="FragmentExtensions\SelectElementExtensions.cs" />
+    <Compile Include="FragmentExtensions\SelectStatementExtensions.cs" />
+    <Compile Include="FragmentExtensions\SetClauseExtensions.cs" />
+    <Compile Include="FragmentExtensions\SqlDataTypeReferenceExtensions.cs" />
+    <Compile Include="FragmentExtensions\TableReferenceExtensions.cs" />
+    <Compile Include="FragmentExtensions\TSqlStatementExtensions.cs" />
+    <Compile Include="FragmentExtensions\InsertSpecificationExtensions.cs" />
+    <Compile Include="FragmentExtensions\ExecuteSpecificationExtensions.cs" />
+    <Compile Include="FragmentExtensions\UpdateSpecificationExtensions.cs" />
+    <Compile Include="FragmentExtensions\InsertStatementExtensions.cs" />
+    <Compile Include="FragmentExtensions\ExecuteStatementExtensions.cs" />
+    <Compile Include="FragmentExtensions\UpdateStatementExtensions.cs" />
+    <Compile Include="FragmentExtensions\UserDataTypeReferenceExtensions.cs" />
+    <Compile Include="FragmentExtensions\ValueExpressionExtensions.cs" />
+    <Compile Include="Generator\ILocalFileSchemaGenerator.cs" />
+    <Compile Include="Generator\LocalFileSchemaGenerator.cs" />
+    <Compile Include="IO\ISchemaWriter.cs" />
+    <Compile Include="IO\XmlSchemaWriter.cs" />
+    <Compile Include="Logging\ILogEntryFormatter.cs" />
+    <Compile Include="Logging\Loggers\FileLogger.cs" />
+    <Compile Include="Logging\Formatters\JsonLogEntryFormatter.cs" />
+    <Compile Include="Logging\LogEntries\TSqlFragmentLogEntry.cs" />
+    <Compile Include="Logging\LogEntries\SchemaFileLogEntry.cs" />
+    <Compile Include="Logging\LogEntries\LogEntry.cs" />
+    <Compile Include="Logging\Loggers\LoggerBase.cs" />
+    <Compile Include="Logging\LogType.cs" />
+    <Compile Include="Logging\Formatters\PlainTextLogEntryFormatter.cs" />
+    <Compile Include="Logging\Loggers\TraceLogger .cs" />
+    <Compile Include="Logging\Loggers\ConsoleLogger.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Schema\Contextes\StatementContext.cs" />
+    <Compile Include="Schema\Contextes\LocalVariableContext.cs" />
+    <Compile Include="Schema\KeyEqualityComparer.cs" />
+    <Compile Include="Schema\References\FieldReference.cs" />
+    <Compile Include="Schema\References\FieldPairReference.cs" />
+    <Compile Include="Schema\SchemaFileContext.cs" />
+    <Compile Include="Schema\SchemaFile.cs" />
+    <Compile Include="Schema\Types\Fields\FieldType.cs" />
+    <Compile Include="Schema\Types\Fields\DecimalField.cs" />
+    <Compile Include="Schema\Types\Fields\OriginType.cs" />
+    <Compile Include="Schema\Types\Fields\TableReferenceField.cs" />
+    <Compile Include="Schema\Types\Fields\UnknownField.cs" />
+    <Compile Include="Schema\Types\Fields\DefaultField.cs" />
+    <Compile Include="Schema\Types\Fields\StringField.cs" />
+    <Compile Include="Schema\Types\Fields\Field.cs" />
+    <Compile Include="Installer.cs" />
+    <Compile Include="Schema\SchemaObject.cs" />
+    <Compile Include="Schema\SchemaObjectExtensions.cs" />
+    <Compile Include="Schema\SchemaDefinition.cs" />
+    <Compile Include="Schema\References\SchemaObjectReference.cs" />
+    <Compile Include="Generator\DatabaseSchemaGenerator.cs" />
+    <Compile Include="Schema\Types\Cte.cs" />
+    <Compile Include="Schema\Types\DerivedTable.cs" />
+    <Compile Include="Schema\Types\Fields\WildCardField.cs" />
+    <Compile Include="Schema\Types\Function.cs" />
+    <Compile Include="Schema\Types\StoredProcedure.cs" />
+    <Compile Include="Schema\Types\Table.cs" />
+    <Compile Include="Schema\Types\TemporaryTable.cs" />
+    <Compile Include="Schema\Types\Unknown.cs" />
+    <Compile Include="Schema\Types\UserDefinedType.cs" />
+    <Compile Include="Schema\Types\UserDefinedTableType.cs" />
+    <Compile Include="Schema\Types\Fields\Parameter.cs" />
+    <Compile Include="Schema\Types\View.cs" />
+    <Compile Include="Settings\DatabaseSchemaFileConvetions.cs" />
+    <Compile Include="Settings\DatabaseSchemaFileLocations.cs" />
+    <Compile Include="Settings\DatabaseSchemaSettings.cs" />
+    <Compile Include="Settings\DatabaseSchemaSettingsAppConfigRepository.cs" />
+    <Compile Include="Generator\IDatabaseSchemaGenerator.cs" />
+    <Compile Include="Settings\IDatabaseSchemaSettingRepository.cs" />
+    <Compile Include="Schema\SchemaObjectType.cs" />
+    <Compile Include="Settings\ILoggerSettingsRepository.cs" />
+    <Compile Include="Settings\LoggerSettings.cs" />
+    <Compile Include="Settings\LoggerSettingsAppConfigRepository.cs" />
+    <Compile Include="Statements\CreateOrAlterFunction.cs" />
+    <Compile Include="Statements\CreateOrAlterStoredProcedure.cs" />
+    <Compile Include="Statements\CreateTable.cs" />
+    <Compile Include="Statements\CreateType.cs" />
+    <Compile Include="Statements\CreateTypeTable.cs" />
+    <Compile Include="Statements\CreateOrAlterView.cs" />
+    <Compile Include="Statements\IStatement.cs" />
+    <Compile Include="FragmentExtensions\NamedTableReferenceExtensions.cs" />
+    <Compile Include="FragmentExtensions\JoinTableReferenceExtensions.cs" />
+    <Compile Include="Statements\SelectDataSet.cs" />
+    <Compile Include="Statements\Statement.cs" />
+    <Compile Include="Validation\Rules\DecimalFieldWithDefaultValues.cs" />
+    <Compile Include="Validation\Rules\FileNameCorrespondsToSchemaObject.cs" />
+    <Compile Include="Validation\Rules\ImplicitConversionInExecuteStatement.cs" />
+    <Compile Include="Validation\Rules\ImplicitConversionInMergeStatement.cs" />
+    <Compile Include="Validation\Rules\ImplicitConversionInSelectStatement.cs" />
+    <Compile Include="Validation\Rules\ImplicitConversionInSetVariableStatement.cs" />
+    <Compile Include="Validation\Rules\ImplicitConversionInInsertStatement.cs" />
+    <Compile Include="Validation\Rules\ImplicitConversionInUpdateStatement.cs" />
+    <Compile Include="Validation\Rules\ImplicitConversionRuleBase.cs" />
+    <Compile Include="Validation\Rules\NoStringColumnWithDefaultLength.cs" />
+    <Compile Include="Visitors\UseStatementVisitor.cs" />
+    <Compile Include="IO\Formatter.cs" />
+    <Compile Include="IO\IParser.cs" />
+    <Compile Include="IO\ISqlScriptGeneratorFactory.cs" />
+    <Compile Include="IO\Parser.cs" />
+    <Compile Include="IO\ParserOutput.cs" />
+    <Compile Include="IO\IFormatter.cs" />
+    <Compile Include="IO\SqlScriptGeneratorFactory.cs" />
+    <Compile Include="IO\XmlVisualizer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FragmentExtensions\TSqlFragmentExtensions.cs" />
+    <Compile Include="Visitors\TSqlFragmentVisitor.cs" />
+    <Compile Include="Validation\IValidationEngine.cs" />
+    <Compile Include="Validation\ValidationEngine.cs" />
+    <Compile Include="Validation\ValidationEngineInstaller.cs" />
+    <Compile Include="Validation\ValidationResult.cs" />
+    <Compile Include="Validation\Rules\NoLeadingWildcard.cs" />
+    <Compile Include="Validation\Rules\NoSelectStart.cs" />
+    <Compile Include="Validation\Rules\SchemaNotDefined.cs" />
+    <Compile Include="Validation\IValidationRule.cs" />
+    <Compile Include="Validation\IValidationRulesFactory.cs" />
+    <Compile Include="Validation\Rules\DontDoMath.cs" />
+    <Compile Include="Validation\Rules\UseSquareBrackets.cs" />
+    <Compile Include="Validation\Settings\IValidationRuleSettingsRepository.cs" />
+    <Compile Include="Validation\Settings\ValidationRuleSettings.cs" />
+    <Compile Include="Validation\Settings\ValidationRuleSettingsDatabaseRepository.cs" />
+    <Compile Include="Validation\ValidationRule.cs" />
+    <Compile Include="Validation\ValidationRulesFactory.cs" />
+    <Compile Include="Validation\ValidationRuleType.cs" />
+    <Compile Include="Validation\Rules\MissingColumnPrefix.cs" />
+    <Compile Include="Validation\Rules\RoundingFound.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Validation\Rules\ValidationRulesToImplement.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
