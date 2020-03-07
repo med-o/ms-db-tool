@@ -38,25 +38,15 @@ namespace Database.App.WinForms.Setup
                     Label = "No \"SELECT *\"",
                     Description = "You should not use \"SELECT *\" expression because it will most likely result in key look-ups",
                 },
-                // TODO : these rules need more work
-                //new ValidationRuleSettings()
-                //{
-                //    Type = ValidationRuleType.SchemaNotDefined,
-                //    Level = LogLevel.Warning,
-                //    Enabled = false,
-                //    Name = "no_schema",
-                //    Label = "Missing DB schema",
-                //    Description = "Specify database schema. Mostly for readability and it avoids unnecessarry sys look up for SPs starting with \"sp_\".",
-                //},
-                //new ValidationRuleSettings()
-                //{
-                //    Type = ValidationRuleType.MissingColumnPrefix,
-                //    Level = LogLevel.Warning,
-                //    Enabled = false,
-                //    Name = "no_column_prefix",
-                //    Label = "Missing column prefix",
-                //    Description = "All columns should be prefixed, this is mostly for readability.",
-                //},
+                new ValidationRuleSettings()
+                {
+                    Type = ValidationRuleType.MissingColumnPrefix,
+                    Level = LogLevel.Warning,
+                    Enabled = true,
+                    Name = "no_column_prefix",
+                    Label = "Missing column prefix",
+                    Description = "All columns should be prefixed, this is mostly for readability.",
+                },
                 //new ValidationRuleSettings()
                 //{
                 //    Type = ValidationRuleType.RoundingFound,
@@ -66,6 +56,15 @@ namespace Database.App.WinForms.Setup
                 //    Label = "Rounding",
                 //    Description = "Round numbers in code, SQL server doesn't have build in functionality to do bankers rounding that we usually use.",
                 //},
+                new ValidationRuleSettings()
+                {
+                    Type = ValidationRuleType.DecimalFieldWithDefaultValues,
+                    Level = LogLevel.Warning,
+                    Enabled = true,
+                    Name = "DecimalFieldWithDefaultValues",
+                    Label = "Decimal field with default values",
+                    Description = "Default is DECIMAL(18, 0) which means decimal part is truncated.",
+                },
                 new ValidationRuleSettings()
                 {
                     Type = ValidationRuleType.NoStringColumnWithDefaultLength,

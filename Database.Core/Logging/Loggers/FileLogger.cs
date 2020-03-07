@@ -40,7 +40,9 @@ namespace Database.Core.Logging
 
         private string GetFilePath()
         {
-            return $"{Settings.OutputFileLocation}\\{Settings.OutputFileName}";
+            var file = new FileInfo($"{Settings.OutputFileLocation}\\{Settings.OutputFileName}");
+            file.Directory.Create();
+            return file.FullName;
         }
     }
 }

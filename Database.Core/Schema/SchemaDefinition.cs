@@ -32,7 +32,7 @@ namespace Database.Core.Schema
     {
         public static void Add(this SchemaDefinition source, KeyValuePair<string, SchemaObject> item)
         {
-            source.AddOrUpdate(item.Key, item.Value, (key, databaseObject) => databaseObject);
+            source.AddOrUpdate(item.Key, item.Value, (key, databaseObject) => item.Value);
         }
 
         public static void AddRange(this SchemaDefinition source, Dictionary<string, SchemaObject> collection)
